@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400&family=Public+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Newsreader", serif;
+  --font-body: "Public Sans", sans-serif;
+  --font-label: "Public Sans", sans-serif;
+
+  --color-primary: #001e40;
+  --color-primary-container: #003366;
+  --color-on-primary: #ffffff;
+  --color-secondary: #775a19;
+  --color-secondary-fixed: #ffdea5;
+  --color-on-secondary: #ffffff;
+  --color-tertiary: #460000;
+  --color-tertiary-container: #6e0000;
+  --color-surface: #f7f9fc;
+  --color-surface-bright: #f7f9fc;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f7;
+  --color-surface-container: #eceef1;
+  --color-surface-container-high: #e6e8eb;
+  --color-surface-container-highest: #e0e3e6;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #43474f;
+  --color-outline-variant: #c3c6d1;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-surface text-on-surface selection:bg-secondary/20;
+  }
+  
+  .font-serif {
+    @apply font-headline;
+  }
+  
+  .dark {
+    --color-surface: #0a0c10;
+    --color-surface-bright: #12151a;
+    --color-surface-container-lowest: #08090c;
+    --color-surface-container-low: #14171d;
+    --color-surface-container: #1a1e26;
+    --color-surface-container-high: #22272f;
+    --color-surface-container-highest: #2a3039;
+    --color-on-surface: #f0f2f5;
+    --color-on-surface-variant: #b8bcc4;
+    --color-outline-variant: #3a4049;
+    --color-primary: #f0f2f5;
+    --color-primary-container: #162440;
+    --color-secondary: #e8c35a;
+    --color-secondary-fixed: #3d2e0f;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-white dark:text-white rounded-md font-bold uppercase tracking-widest text-sm transition-all hover:bg-primary-container active:scale-95 shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-secondary text-white dark:text-white rounded-md font-bold uppercase tracking-widest text-sm transition-all hover:opacity-90 active:scale-95 shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border border-white/30 backdrop-blur-sm text-white rounded-md font-bold uppercase tracking-widest text-sm transition-all hover:bg-white/10 active:scale-95;
+  }
+}
