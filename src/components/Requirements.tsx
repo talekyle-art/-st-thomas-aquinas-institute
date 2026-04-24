@@ -21,10 +21,10 @@ const requirementItems = [
 
 export default function Requirements() {
   return (
-    <section className="bg-surface-container-low dark:bg-surface-container py-24">
+    <section className="bg-surface-container-low py-24">
       <div className="container mx-auto px-6">
-        <div className="bg-surface-container-lowest dark:bg-surface-container rounded-[2rem] overflow-hidden shadow-sm flex flex-col lg:flex-row">
-          <div className="lg:w-1/3 bg-primary dark:bg-primary-container p-12 flex flex-col justify-center relative overflow-hidden">
+        <div className="bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm flex flex-col lg:flex-row">
+           <div className="lg:w-1/3 bg-primary p-12 flex flex-col justify-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
             <h2 className="font-serif text-4xl text-white mb-6 relative z-10">Requirements!</h2>
             <p className="text-white/70 relative z-10 leading-relaxed font-light">
@@ -43,7 +43,7 @@ export default function Requirements() {
                     <item.icon className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-on-surface dark:text-white mb-1">{item.title}</h4>
+                     <h4 className="font-bold text-on-surface mb-1">{item.title}</h4>
                     <p className="text-sm text-on-surface-variant">{item.detail}</p>
                   </div>
                 </div>

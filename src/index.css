@@ -34,32 +34,15 @@
   .font-serif {
     @apply font-headline;
   }
-  
-  .dark {
-    --color-surface: #0a0c10;
-    --color-surface-bright: #12151a;
-    --color-surface-container-lowest: #08090c;
-    --color-surface-container-low: #14171d;
-    --color-surface-container: #1a1e26;
-    --color-surface-container-high: #22272f;
-    --color-surface-container-highest: #2a3039;
-    --color-on-surface: #f0f2f5;
-    --color-on-surface-variant: #b8bcc4;
-    --color-outline-variant: #3a4049;
-    --color-primary: #f0f2f5;
-    --color-primary-container: #162440;
-    --color-secondary: #e8c35a;
-    --color-secondary-fixed: #3d2e0f;
-  }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-white dark:text-white rounded-md font-bold uppercase tracking-widest text-sm transition-all hover:bg-primary-container active:scale-95 shadow-lg;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-white rounded-md font-bold uppercase tracking-widest text-sm transition-all hover:bg-primary-container active:scale-95 shadow-lg;
   }
   
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-secondary text-white dark:text-white rounded-md font-bold uppercase tracking-widest text-sm transition-all hover:opacity-90 active:scale-95 shadow-lg;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-secondary text-white rounded-md font-bold uppercase tracking-widest text-sm transition-all hover:opacity-90 active:scale-95 shadow-lg;
   }
   
   .btn-outline {

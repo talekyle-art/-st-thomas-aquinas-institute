@@ -144,7 +144,7 @@ export default function EnrollmentDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-container-low dark:bg-surface-container-low pt-24 pb-12 px-6">
+      <div className="min-h-screen bg-surface-container-low pt-24 pb-12 px-6">
       <input 
         type="file" 
         ref={fileInputRef} 
@@ -159,7 +159,7 @@ export default function EnrollmentDashboard() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-xl flex items-center gap-2 text-red-700 dark:text-red-400 text-sm font-medium"
+             className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2 text-red-700 text-sm font-medium"
           >
             <AlertCircle className="w-5 h-5 flex-shrink-0" />
             {uploadError}
@@ -171,13 +171,13 @@ export default function EnrollmentDashboard() {
               <LayoutDashboard className="w-4 h-4" />
               Student Portal
             </div>
-            <h1 className="font-serif text-4xl text-primary dark:text-white">Enrollment Dashboard</h1>
+            <h1 className="font-serif text-4xl text-primary">Enrollment Dashboard</h1>
           </div>
           
-          <div className="bg-white dark:bg-surface-container p-4 rounded-xl shadow-sm border border-outline-variant/30 flex items-center gap-6">
+           <div className="bg-white p-4 rounded-xl shadow-sm border border-outline-variant/30 flex items-center gap-6">
             <div className="text-right">
               <span className="block text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Overall Progress</span>
-              <span className="block text-2xl font-serif text-primary dark:text-white">{progress}%</span>
+               <span className="block text-2xl font-serif text-primary">{progress}%</span>
             </div>
             <div className="w-32 h-2 bg-surface-container rounded-full overflow-hidden">
               <motion.div 
@@ -192,7 +192,7 @@ export default function EnrollmentDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Sidebar - Navigation & Course */}
           <aside className="lg:col-span-4 space-y-6">
-            <div className="bg-white dark:bg-surface-container rounded-2xl p-6 shadow-sm border border-outline-variant/30">
+             <div className="bg-white rounded-2xl p-6 shadow-sm border border-outline-variant/30">
               <nav className="flex flex-col gap-2 mb-8">
                 <button 
                   onClick={() => setActiveTab('details')}
@@ -214,7 +214,7 @@ export default function EnrollmentDashboard() {
                 </button>
               </nav>
 
-              <h3 className="font-bold text-on-surface dark:text-white mb-4 flex items-center gap-2">
+              <h3 className="font-bold text-on-surface mb-4 flex items-center gap-2">
                 <FileText className="w-4 h-4 text-secondary" />
                 Selected Program
               </h3>
@@ -225,12 +225,12 @@ export default function EnrollmentDashboard() {
                     onClick={() => setSelectedCourse(course)}
                     className={`w-full text-left p-4 rounded-xl transition-all border-2 ${
                       selectedCourse.id === course.id 
-                        ? 'border-secondary bg-secondary/5 dark:bg-secondary/10' 
-                        : 'border-transparent bg-surface-container-low dark:bg-surface-container hover:bg-surface-container'
+                         ? 'border-secondary bg-secondary/5' 
+                         : 'border-transparent bg-surface-container-low hover:bg-surface-container'
                     }`}
                   >
                     <span className="block text-[10px] font-bold uppercase tracking-wider text-secondary mb-1">{course.code}</span>
-                    <span className="block font-medium text-on-surface dark:text-white leading-tight">{course.title}</span>
+                     <span className="block font-medium text-on-surface leading-tight">{course.title}</span>
                   </button>
                 ))}
               </div>
@@ -252,16 +252,16 @@ export default function EnrollmentDashboard() {
           {/* Main Content */}
           <main className="lg:col-span-8">
             <AnimatePresence mode="wait">
-              {activeTab === 'details' ? (
-                <motion.div 
-                  key="details"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="bg-white dark:bg-surface-container rounded-2xl shadow-sm border border-outline-variant/30 overflow-hidden"
-                >
-                  <div className="p-6 border-b border-outline-variant/30 bg-surface-container-lowest dark:bg-surface-container-low">
-                    <h3 className="font-bold text-primary dark:text-white">Student Information</h3>
+               {activeTab === 'details' ? (
+                 <motion.div 
+                   key="details"
+                   initial={{ opacity: 0, x: 20 }}
+                   animate={{ opacity: 1, x: 0 }}
+                   exit={{ opacity: 0, x: -20 }}
+                   className="bg-white rounded-2xl shadow-sm border border-outline-variant/30 overflow-hidden"
+                 >
+                  <div className="p-6 border-b border-outline-variant/30 bg-surface-container-lowest">
+                     <h3 className="font-bold text-primary">Student Information</h3>
                     <p className="text-xs text-on-surface-variant">Please fill out all fields accurately as they will be used for your official records.</p>
                   </div>
                   
@@ -272,21 +272,21 @@ export default function EnrollmentDashboard() {
                         <input 
                           type="text" 
                           name="firstName"
-                          value={studentInfo.firstName}
-                          onChange={handleInputChange}
-                          className="w-full p-3 bg-surface-container-low dark:bg-surface-container rounded-xl border-transparent focus:bg-white dark:focus:bg-surface-container-low focus:border-secondary/30 focus:ring-0 transition-all"
-                          placeholder="Juan"
+                           value={studentInfo.firstName}
+                           onChange={handleInputChange}
+                           className="w-full p-3 bg-surface-container-low rounded-xl border-transparent focus:bg-white focus:border-secondary/30 focus:ring-0 transition-all"
+                           placeholder="Juan"
                         />
                       </div>
                       <div className="space-y-2">
                         <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Last Name</label>
                         <input 
                           type="text" 
-                          name="lastName"
-                          value={studentInfo.lastName}
-                          onChange={handleInputChange}
-                          className="w-full p-3 bg-surface-container-low dark:bg-surface-container rounded-xl border-transparent focus:bg-white dark:focus:bg-surface-container-low focus:border-secondary/30 focus:ring-0 transition-all"
-                          placeholder="Dela Cruz"
+                           name="lastName"
+                           value={studentInfo.lastName}
+                           onChange={handleInputChange}
+                           className="w-full p-3 bg-surface-container-low rounded-xl border-transparent focus:bg-white focus:border-secondary/30 focus:ring-0 transition-all"
+                           placeholder="Dela Cruz"
                         />
                       </div>
                     </div>
@@ -299,7 +299,7 @@ export default function EnrollmentDashboard() {
                           name="email"
                           value={studentInfo.email}
                           onChange={handleInputChange}
-                          className="w-full p-3 bg-surface-container-low dark:bg-surface-container rounded-xl border-transparent focus:bg-white dark:focus:bg-surface-container-low focus:border-secondary/30 focus:ring-0 transition-all"
+                          className="w-full p-3 bg-surface-container-low rounded-xl border-transparent focus:bg-white focus:border-secondary/30 focus:ring-0 transition-all"
                           placeholder="juan.delacruz@example.com"
                         />
                       </div>
@@ -310,7 +310,7 @@ export default function EnrollmentDashboard() {
                           name="phone"
                           value={studentInfo.phone}
                           onChange={handleInputChange}
-                          className="w-full p-3 bg-surface-container-low dark:bg-surface-container rounded-xl border-transparent focus:bg-white dark:focus:bg-surface-container-low focus:border-secondary/30 focus:ring-0 transition-all"
+                          className="w-full p-3 bg-surface-container-low rounded-xl border-transparent focus:bg-white focus:border-secondary/30 focus:ring-0 transition-all"
                           placeholder="+63 9XX XXX XXXX"
                         />
                       </div>
@@ -324,7 +324,7 @@ export default function EnrollmentDashboard() {
                           name="birthDate"
                           value={studentInfo.birthDate}
                           onChange={handleInputChange}
-                          className="w-full p-3 bg-surface-container-low dark:bg-surface-container rounded-xl border-transparent focus:bg-white dark:focus:bg-surface-container-low focus:border-secondary/30 focus:ring-0 transition-all"
+                          className="w-full p-3 bg-surface-container-low rounded-xl border-transparent focus:bg-white focus:border-secondary/30 focus:ring-0 transition-all"
                         />
                       </div>
                       <div className="space-y-2">
@@ -333,7 +333,7 @@ export default function EnrollmentDashboard() {
                           name="civilStatus"
                           value={studentInfo.civilStatus}
                           onChange={handleInputChange}
-                          className="w-full p-3 bg-surface-container-low dark:bg-surface-container rounded-xl border-transparent focus:bg-white dark:focus:bg-surface-container-low focus:border-secondary/30 focus:ring-0 transition-all"
+                          className="w-full p-3 bg-surface-container-low rounded-xl border-transparent focus:bg-white focus:border-secondary/30 focus:ring-0 transition-all"
                         >
                           <option value="single">Single</option>
                           <option value="married">Married</option>
@@ -349,7 +349,7 @@ export default function EnrollmentDashboard() {
                         value={studentInfo.address}
                         onChange={handleInputChange}
                         rows={3}
-                        className="w-full p-3 bg-surface-container-low dark:bg-surface-container rounded-xl border-transparent focus:bg-white dark:focus:bg-surface-container-low focus:border-secondary/30 focus:ring-0 transition-all"
+                        className="w-full p-3 bg-surface-container-low rounded-xl border-transparent focus:bg-white focus:border-secondary/30 focus:ring-0 transition-all"
                         placeholder="House No., Street, Barangay, City, Province"
                       />
                     </div>
@@ -377,15 +377,15 @@ export default function EnrollmentDashboard() {
                 </motion.div>
 
               ) : (
-                <motion.div 
-                  key="requirements"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  className="bg-white dark:bg-surface-container rounded-2xl shadow-sm border border-outline-variant/30 overflow-hidden"
-                >
-                  <div className="p-6 border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-lowest dark:bg-surface-container-low">
-                    <h3 className="font-bold text-primary dark:text-white">Document Checklist</h3>
+                 <motion.div 
+                   key="requirements"
+                   initial={{ opacity: 0, x: 20 }}
+                   animate={{ opacity: 1, x: 0 }}
+                   exit={{ opacity: 0, x: -20 }}
+                   className="bg-white rounded-2xl shadow-sm border border-outline-variant/30 overflow-hidden"
+                 >
+                   <div className="p-6 border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-lowest">
+                     <h3 className="font-bold text-primary">Document Checklist</h3>
                     <span className="text-xs text-on-surface-variant font-medium">
                       {completedCount} of {requirements.length} requirements met
                     </span>
@@ -409,13 +409,13 @@ export default function EnrollmentDashboard() {
                         
                         <div className="flex-grow">
                           <div className="flex items-center justify-between mb-1">
-                            <h4 className={`font-bold transition-colors ${req.status === 'completed' ? 'text-on-surface-variant' : 'text-primary dark:text-white'}`}>
+                             <h4 className={`font-bold transition-colors ${req.status === 'completed' ? 'text-on-surface-variant' : 'text-primary'}`}>
                               {req.title}
                             </h4>
                             <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded ${
-                              req.status === 'completed' ? 'bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-400' :
-                              req.status === 'reviewing' ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400' :
-                              'bg-surface-container text-on-surface-variant'
+                               req.status === 'completed' ? 'bg-green-100 text-green-700' :
+                               req.status === 'reviewing' ? 'bg-amber-100 text-amber-700' :
+                               'bg-surface-container text-on-surface-variant'
                             }`}>
                               {req.status}
                             </span>
@@ -427,7 +427,7 @@ export default function EnrollmentDashboard() {
                           {req.fileName ? (
                             <div className="flex items-center gap-2 p-2 bg-surface-container-low rounded-lg border border-outline-variant/20 w-fit">
                               <FileCheck className="w-4 h-4 text-green-600" />
-                              <span className="text-xs font-medium text-on-surface dark:text-white max-w-[150px] truncate">{req.fileName}</span>
+                               <span className="text-xs font-medium text-on-surface max-w-[150px] truncate">{req.fileName}</span>
                               <button 
                                 onClick={(e) => removeFile(req.id, e)}
                                 className="p-1 hover:bg-error-container hover:text-error rounded-full transition-colors"
@@ -453,7 +453,7 @@ export default function EnrollmentDashboard() {
                     <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-secondary/20 shadow-sm">
                       <AlertCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
                       <p className="text-xs text-on-surface-variant leading-relaxed">
-                        <strong className="text-on-surface dark:text-white block mb-1">Important Note:</strong>
+                         <strong className="text-on-surface block mb-1">Important Note:</strong>
                         Please bring the original copies of all uploaded documents to the campus for final verification. Enrollment is only finalized once physical documents are checked.
                       </p>
                     </div>

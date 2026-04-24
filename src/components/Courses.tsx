@@ -10,19 +10,19 @@ interface CourseCardProps {
 
 export function CourseCard({ title, description, level, icon: Icon }: CourseCardProps) {
   return (
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="group relative overflow-hidden rounded-xl bg-surface-container-lowest dark:bg-surface-container shadow-sm hover:shadow-xl transition-all duration-500"
-    >
+     <motion.div 
+       whileHover={{ y: -5 }}
+       className="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-500"
+     >
       <div className="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
       <div className="p-8 md:p-12 flex flex-col h-full">
         <div className="w-16 h-16 bg-surface-container-high rounded-2xl flex items-center justify-center mb-8 group-hover:bg-secondary/10 transition-colors">
           <Icon className="w-8 h-8 text-secondary" />
         </div>
-        <h3 className="font-serif text-3xl text-on-surface dark:text-white mb-4 leading-tight">{title}</h3>
+         <h3 className="font-serif text-3xl text-on-surface mb-4 leading-tight">{title}</h3>
         <p className="text-on-surface-variant mb-8 leading-relaxed">{description}</p>
         <div className="mt-auto flex items-center justify-between">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-fixed dark:bg-secondary/20 px-3 py-1 rounded-full">
+           <span className="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary-fixed px-3 py-1 rounded-full">
             {level}
           </span>
           <a 
@@ -42,7 +42,7 @@ export default function Courses() {
   return (
     <section id="courses" className="py-24 px-6 container mx-auto">
       <div className="flex flex-col mb-16">
-        <h2 className="font-serif text-4xl text-on-surface dark:text-white mb-2 italic">Open Courses!</h2>
+         <h2 className="font-serif text-4xl text-on-surface mb-2 italic">Open Courses!</h2>
         <div className="h-1 w-24 bg-secondary"></div>
       </div>
       
